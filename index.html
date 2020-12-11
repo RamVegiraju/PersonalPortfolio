@@ -92,12 +92,11 @@
             <h2>About Me</h2>
 
             <p>
-               Hi! My name is Ram Vegiraju and I am a rising senior at the University of Virginia majoring in Statistics with minors in 
+               Hi! My name is Ram Vegiraju and I am a senior at the University of Virginia majoring in Statistics with minors in 
                Computer Science and Mathematics. I am currently an incoming Solutions Architect at <a style = " white-space:nowrap; " href="https://aws.amazon.com/" target="_blank">Amazon</a>. I am passionate about understanding the theory behind Machine/Deep Learning algorithms 
-               and implementing full-stack data science solutions on the cloud for interesting problems in fields such as NLP and Computer Vision.
-               In my free time I love <a style = " white-space:nowrap; " href="https://ram-vegiraju.medium.com/" target="_blank">writing</a>, reading, and playing basketball.
-               Feel free to check out my Education/Skills below and some of my projects and hobbies in 
-               the other sections!
+               and implementing full-stack data science solutions at scale for interesting problems in fields such as NLP and Computer Vision.
+               In my free time I love <a style = " white-space:nowrap; " href="https://ram-vegiraju.medium.com/" target="_blank">writing</a>, reading, and playing basketball or tennis. Read my latest article <a style = " white-space:nowrap; " href="https://towardsdatascience.com/training-and-deploying-custom-tensorflow-models-with-aws-sagemaker-72027722ad76" target="_blank">here</a>.
+               Feel free to check out my Resume/Skills below and some of my projects and hobbies in the other sections!
             </p>
 
             <div class="row">
@@ -139,7 +138,7 @@
                   <p class="info">B.A. Degree in Statistics, Minor in Computer Science<span>&bull;</span> <em class="date">Sept 2017 - Dec 2020</em></p>
 
                   <p>
-                  <span>Relevant Coursework: </span> Machine Learning, Software Development Methods Java, Data Analysis with Python, Data Science with R,
+                  <span>Relevant Coursework: </span> Machine Learning, Linear Algebra, Software Development Methods Java, Data Analysis with Python, Data Science with R,
                   Mathematical Statistics & Probability, Regression Analysis
                   </p>
 
@@ -173,9 +172,10 @@
                   Worked on building and presenting prototypes as an R&D Engineer over 12 weeks for two different customers. 
                   <li>Objective: Developed and deployed a full stack Neural Machine Translation prototype for client. Presented weekly demos to clients and gained extensive experience with various AWS services: Lambda, S3, API Gateway, CloudFormation, Cognito, Sagemaker, ECR, Amplify, and KMS.</li>
                   <li>React/Javascript: Utilized AWS Amplify to create a front-end dashboard with authentication through AWS Cognito. Application processes client inputs and accesses a REST API created through AWS API Gatway.</li>
-                  <li>Python: Developed AWS Lambda functions that query and store inputs in AWS S3. Utilized AWS Python SDK (boto3) to connect to AWS Translate and AWS Sagemaker endpoint and return outputs to the front-end while storing results in S3.</li>
+                  <li>Python: Developed AWS Lambda functions that query and store inputs in AWS S3. Utilized AWS Python SDK (boto3) to connect to AWS Translate and AWS Sagemaker endpoint and return ouputs to the front-end while storing results in S3.</li>
                   <li>NLP/ML: Worked with NLTK, Spacy, and Transformers libraries to preprocess and tokenize languages prior to modelling. Developed, trained, and tuned a seq2seq model for translation. Deployed model using Docker with ECR, and accessed endpoint for inference through Lambda.</li>
                   <li>CloudFormation: Helped develop Bash scripts and a CloudFormation template to automate deployment and creation of architecture for the client.</li>
+                  <li>Second Customer/Project: Helped build an application using high-level ML/NLP services. Developed Python AWS Lambda functions to work with AWS Comprehend for Sentiment Analysis, Entity Extraction, and Topic Modelling.</li>
                   </p>
 
                </div>
@@ -216,27 +216,63 @@
 
          <div class="nine columns main-col">
 
-            <p>I have strong foundations in Linear Algebra, Probability, and Statistical Methods from a mathematical standpoint. 
+            <p>
                I have experience with implementing various Supervised and Unsupervised techniques such as MLR, Logistic Regression, Clustering, 
-               PCA, Random Forest, and SVM. In addition, I am well versed with ANN's, CNN's, and RNN's as well as their application in 
+               PCA, Random Forest, and SVM. In addition, I am well versed with deep learning architectures such as ANN's, CNN's, and RNN/LSTM's as well as their application in 
                fields such as NLP and Time-Series. Currently learning more about GANs and Transfer Learning.
             </p>
 
-            
+            <div class="dropdown">
+               <button class="dropbtn" id = "langsSkills"onclick="manipulateSkills(this.id);">Languages</button>
+               <button class="dropbtn" id = "MLSkills" onclick="manipulateSkills(this.id);">Machine Learning</button>
+               <button class="dropbtn" id = "DataAnalysisSkills" onclick="manipulateSkills(this.id);">Data Analysis</button>
+               <button class="dropbtn" id = "frameworkSkills" onclick="manipulateSkills(this.id);">Frameworks</button>
+            </div>
 
-				<div class="bars">
+            <script>
+               
+               function manipulateSkills(clicked_id) {
+                  console.log(clicked_id);
+                  if (clicked_id == 'langsSkills') {
+                     document.getElementById('skillsList').innerHTML = '<div class="bars" id = "skillsList"><ul class="skills"><li><span class="bar-expand photoshop"></span><em>Python</em></li><li><span class="bar-expand html5"></span><em>Java (OOP & Data Structures)</em></li><li><span class="bar-expand illustrator"></span><em>R</em></li><li><span class="bar-expand jquery"></span><em>JavaScript</em></li><li><span class="bar-expand css"></span><em>HTML/CSS</em></li><li><span class="bar-expand css"></span><em>Bash</em></li></ul></div>';
+                  }else if (clicked_id == 'MLSkills') {
+                     document.getElementById('skillsList').innerHTML = '<div class="bars" id = "skillsList"><ul class="skills"><li><span class="bar-expand photoshop"></span><em>Supervised & Unsupervised Machine Learning</em></li><li><span class="bar-expand html5"></span><em>Natural Language Processing</em></li><li><span class="bar-expand jquery"></span><em>Computer Vision</em></li><li><span class="bar-expand css"></span><em>Time-Series Forecasting</em></li></ul></div>'
+                  }else if (clicked_id == 'DataAnalysisSkills') {
+                     document.getElementById('skillsList').innerHTML = '<div class="bars" id = "skillsList"><ul class="skills"><li><span class="bar-expand photoshop"></span><em>SQL</em></li><li><span class="bar-expand photoshop"></span><em>Pandas</em></li><li><span class="bar-expand jquery"></span><em>MATLAB</em></li><li><span class="bar-expand css"></span><em>SAS</em></li></ul></div>'
+                  }
+                  else {
+                     document.getElementById('skillsList').innerHTML = '<div class="bars" id = "skillsList"><ul class="skills"><li><span class="bar-expand photoshop"></span><em>Scikit-Learn</em></li><li><span class="bar-expand illustrator"></span><em>TensorFlow/Keras</em></li><li><span class="bar-expand jquery"></span><em>PyTorch</em></li><li><span class="bar-expand jquery"></span><em>ReactJS</em></li><li><span class="bar-expand jquery"></span><em>Flask</em></li><li><span class="bar-expand css"></span><em>AWS</em></li></ul></div>'
+                  }
+               }
 
+              // const about = () => {
+    //document.getElementById('skillsList').innerHTML = '<div class="bars" id = "skillsList"><ul class="skills"><li><span class="bar-expand photoshop"></span><em>Python</em></li><li><span class="bar-expand html5"></span><em>Java (OOP & Data Strctures)</em></li><li><span class="bar-expand illustrator"></span><em>R</em></li><li><span class="bar-expand wordpress"></span><em>JavaScript</em></li><li><span class="bar-expand wordpress"></span><em>HTML/CSS</em></li></div>';
+   //}
+             
+            </script>
+
+         
+				<div class="bars" id = "skillsList">
+
+               <!--
 				   <ul class="skills">
                   <li><span class="bar-expand photoshop"></span><em>Python</em></li>
                   <li><span class="bar-expand html5"></span><em>Java (OOP & Data Strctures)</em></li>
                   <li><span class="bar-expand illustrator"></span><em>R</em></li>
-						<li><span class="bar-expand wordpress"></span><em>HTML/CSS/JS</em></li>
+                  <li><span class="bar-expand wordpress"></span><em>JavaScript</em></li>
+						<li><span class="bar-expand wordpress"></span><em>HTML/CSS</em></li>
 						<li><span class="bar-expand css"></span><em>Machine Learning (Supervised & Unsupervised)</em></li>
 						<li><span class="bar-expand html5"></span><em>Natural Language Processing</em></li>
                   <li><span class="bar-expand jquery"></span><em>AWS</em></li>
-					</ul>
+               </ul>
+            -->
+            
 
-				</div><!-- end skill-bars -->
+            </div>
+
+            
+         
+            <!-- end skill-bars -->
 
 			</div> <!-- main-col end -->
 
@@ -329,7 +365,6 @@
                <!--
                <div class="columns portfolio-item">
                   <div class="item-wrap">
-
                      <a href="#modal-05" title="">
                         <img alt="" src="images/kaggle.jpg">
                         <div class="overlay">
@@ -340,14 +375,12 @@
                         </div>
                         <div class="link-icon"><i class="icon-plus"></i></div>
                      </a>
-
                   </div>
           		</div> --> <!-- item end -->
 
                 <!--
                <div class="columns portfolio-item">
                   <div class="item-wrap">
-
                      <a href="#modal-06" title="">
                         <img alt="" src="images/portfolio/girl.jpg">
                         <div class="overlay">
@@ -358,14 +391,12 @@
                         </div>
                         <div class="link-icon"><i class="icon-plus"></i></div>
                      </a>
-
                   </div>
           		</div> --> <!-- item end -->
 
                 <!--
                <div class="columns portfolio-item">
                   <div class="item-wrap">
-
                      <a href="#modal-07" title="">
                         <img alt="" src="images/portfolio/origami.jpg">
                         <div class="overlay">
@@ -376,14 +407,12 @@
                         </div>
                         <div class="link-icon"><i class="icon-plus"></i></div>
                      </a>
-
                   </div>
           		</div> --> <!-- item end -->
 
                 <!--
                <div class="columns portfolio-item">
                   <div class="item-wrap">
-
                      <a href="#modal-08" title="">
                         <img alt="" src="images/portfolio/retrocam.jpg">
                         <div class="overlay">
@@ -394,7 +423,6 @@
                         </div>
                         <div class="link-icon"><i class="icon-plus"></i></div>
                      </a>
-
                   </div>
           		</div> --> <!-- item end -->
 
